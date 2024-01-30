@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcement Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+
+        section {
+            margin-top: 20px;
+            padding: 10px; /* Adjusted padding */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>What's New</h1>
+    </header>
+
+    <section>
+        <h2>Now you can Request a Book!</h2>
+        <p>Submit your request with Book Name and Author Name.</p>
+        <button onclick="redirectToBookRequest()">Try Now</button>
+    </section>
+
+    <section>
+        <h2>Explore Our New Collection!</h2>
+        <p>Discover the latest additions to our library. Find your next favorite book!</p>
+        <button onclick="redirectToExploreCollection()">Try Now</button>
+    </section>
+
+    <section>
+        <h2>Rate Our Page</h2>
+        <p>We would love to hear your feedback! Please take a moment to rate our announcement page.</p>
+        <button onclick="redirectToRatePage()">Rate Now</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 DigiLib. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function redirectToBookRequest() {
+            window.location.href = "bookrequest.html";
+        }
+
+        function redirectToExploreCollection() {
+            window.location.href = "Login.html";
+        }
+
+        function redirectToRatePage() {
+            window.location.href = "rating.html";
+        }
+    </script>
+
+</body>
+</html>

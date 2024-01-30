@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Requests</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url(https://images.pexels.com/photos/1097930/pexels-photo-1097930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+            background-size: cover;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 60% ;
+            border-collapse: collapse;
+            margin-top: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #fff ;
+            background-color: #fff ;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tbody tr:hover {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Book Requests</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Book Name</th>
+                <th>Author Name</th>
+            </tr>
+        </thead>
+        <tbody id="bookRequestTableBody">
+            <!-- Data will be inserted here dynamically using JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch book requests from the server
+        fetchBookRequests();
+
+        function fetchBookRequests() {
+            fetch('fetchBookRequestsServlet')
+                .then(response => response.json())
+                .then(data => {
+                    const tableBody = document.getElementById('bookRequestTableBody');
+                    tableBody.innerHTML = '';
+
+                    data.forEach(request => {
+                        const row = document.createElement('tr');
+                        const bookNameCell = document.createElement('td');
+                        const authorNameCell = document.createElement('td');
+
+                        bookNameCell.textContent = request.bookName;
+                        authorNameCell.textContent = request.authorName;
+
+                        row.appendChild(bookNameCell);
+                        row.appendChild(authorNameCell);
+                        tableBody.appendChild(row);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching book requests:', error);
+                });
+        }
+    </script>
+
+</body>
+</html>

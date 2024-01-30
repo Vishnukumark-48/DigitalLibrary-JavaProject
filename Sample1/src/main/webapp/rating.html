@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Reviews</title>
+  <style>
+    body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url(https://images.pexels.com/photos/1097930/pexels-photo-1097930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    h2 {
+            margin-bottom: 20px;
+            color: #333; /* Green color for the header */
+    }
+
+    form {
+      width: 70%;
+      max-width: 400px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input[type="text"], input[type="submit"], input[type="radio"] {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating label {
+      cursor: pointer;
+      font-size: 24px;
+      color: #ccc;
+      transform-origin: center;
+      transition: transform 0.2s, color 0.2s;
+    }
+
+    .rating input:checked ~ label {
+      color: #ffcc00;
+      transform: scale(1.2);
+    }
+
+    .review-textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  
+  <form id="reviewForm" action="SubmitReviewServlet" method="post">
+  <h2>Rate Us !</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="rating">Rating:</label>
+    <div class="rating">
+      <input type="radio" id="star5" name="rating" value="5" required>
+      <label for="star5">&#9733;</label>
+
+      <input type="radio" id="star4" name="rating" value="4">
+      <label for="star4">&#9733;</label>
+
+      <input type="radio" id="star3" name="rating" value="3">
+      <label for="star3">&#9733;</label>
+
+      <input type="radio" id="star2" name="rating" value="2">
+      <label for="star2">&#9733;</label>
+
+      <input type="radio" id="star1" name="rating" value="1">
+      <label for="star1">&#9733;</label>
+    </div>
+
+    <label for="review" class="review-label">Write a review:</label>
+    <textarea id="review" name="review" rows="4" class="review-textarea" required></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    const ratingInputs = document.querySelectorAll('.rating input');
+
+    ratingInputs.forEach((input, index) => {
+      input.addEventListener('click', function() {
+        this.parentNode.querySelectorAll('label').forEach((label, i) => {
+          label.style.transform = `scale(${i <= index ? 1.2 : 1})`;
+          label.style.color = i <= index ? '#ffcc00' : '#ccc';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

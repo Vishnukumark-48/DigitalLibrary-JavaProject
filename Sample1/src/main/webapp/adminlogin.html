@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f0f0;
+            background-size: cover;
+            background-image: url(https://images.pexels.com/photos/1097930/pexels-photo-1097930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+            transition: background 0.5s ease-in-out;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333; /* Green color for the header */
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        form {
+            margin-top: 20px;
+            transition: margin 0.3s ease-in-out;
+            text-align: left; /* Align form elements to the left */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.5s ease-in-out;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto; /* Center the button */
+            background-color: #333;
+            color: #fff;
+            padding: 12px 20px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: red;
+            border-color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+            margin-left: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        form:hover {
+            margin-top: 25px;
+        }
+
+        label:hover {
+            color: #555;
+        }
+
+        input:hover {
+            border-color: #999;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Admin Login</h2>
+        <form method="post" action="adminloginservlet">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your Name" name="name">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your Password" name="password">
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+
+</html>

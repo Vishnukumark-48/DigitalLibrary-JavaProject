@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url(https://images.pexels.com/photos/1097930/pexels-photo-1097930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .header {
+            background-color: #333;
+            padding: 5px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .logo-container img {
+            width: 30px;
+            height: auto;
+            margin-right: 5px;
+        }
+
+        .logo-container h4 {
+            margin: 0;
+            color: #fff;
+        }
+
+        .admin-button {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+            position: relative;
+        }
+
+        .admin-button span {
+            background-color: #fff;
+            width: 20px;
+            height: 3px;
+            margin: 3px 0;
+            transition: 0.4s;
+        }
+
+        #adminOptions {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: #333;
+            border-radius: 5px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+            position: absolute;
+            top: 100%;
+            right: 0;
+            z-index: 2;
+            padding: 5px;
+        }
+
+        #adminOptions a {
+            text-decoration: none;
+            color: #fff;
+            display: block;
+            white-space: nowrap;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            padding: 10px;
+        }
+
+        #adminOptions a:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+        .welcome-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 500px;
+            color: #333;
+            margin-top: 270px;
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .button-container a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .button-container a:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+        .contact-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            background-color: #333;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .contact-button:hover {
+            background-color: red;
+            color: #fff;
+        }
+
+        /* New style for the quote */
+        .quote {
+            color: #333;
+            font-size: 100px;
+            position: absolute;
+            top: 100px;
+            left: 56%;
+            transform: translateX(-50%);
+        }
+
+        /* New style for the red "re" */
+        .red-re {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img
+                src="https://th.bing.com/th/id/OIP.YDuoAnEc6qLclGVRJ8fuHQHaHa?w=187&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                alt="Logo">
+            <h4> DigiLib</h4>
+        </div>
+        <div class="admin-button" id="hamburgerButton">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div id="adminOptions">
+
+                <a href="bookrequest.html" class="admin-link">Request a Book</a>
+                <a href="announcement.html" class="admin-link">What's New</a>
+                <a href="rating.html" class="admin-link">Rate us !</a>
+                
+                <a href="adminlogin.html" class="admin-link">Admin </a>
+            </div>
+        </div>
+    </div>
+    <!-- New quote added with "re" in red -->
+    <div class="quote">Reading <span class="red-re">re</span>Defined.</div>
+    <div class="welcome-container">
+        <div class="welcome-message">Embark on Digital Reading Adventure </div>
+        <div class="button-container">
+            <a href="welcome1.html">Get Started !</a>
+        </div>
+    </div>
+    
+    
+
+    <!-- Contact us button -->
+    <a href="contactus.html" class="contact-button">Contact us</a>
+    
+
+    <script>
+        var adminOptions = document.getElementById("adminOptions");
+        var hamburgerButton = document.getElementById("hamburgerButton");
+
+        // Mouseenter event to show the admin menu
+        hamburgerButton.addEventListener("mouseenter", function () {
+            adminOptions.style.display = "flex";
+        });
+
+        // Mouseleave event to hide the admin menu
+        hamburgerButton.addEventListener("mouseleave", function () {
+            adminOptions.style.display = "none";
+        });
+
+        // Click event on document body to hide the dropdown
+        document.body.addEventListener("click", function () {
+            adminOptions.style.display = "none";
+        });
+    </script>
+    
+    
+</body>
+
+</html>

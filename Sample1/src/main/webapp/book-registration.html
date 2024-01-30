@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Registration</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 400px;
+            margin: 0 auto; /* Center the form */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;  /* Green color for the header */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left; /* Left align the labels */
+        }
+
+        input,
+        select {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: left; /* Left align the input fields */
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: red;
+            border-color: #333;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('https://images.pexels.com/photos/1097930/pexels-photo-1097930.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size: cover;">
+    <div class="container">
+        <h2>Book Registration</h2>
+        <form action="BookRegistrationServlet" method="post">
+            <label for="bookName">Book Name</label>
+            <input type="text" id="bookName" name="bookName" placeholder="Enter the Book Name" required>
+
+            <label for="authorName">Author Name</label>
+            <input type="text" id="authorName" name="authorName" placeholder="Enter the Author Name" required>
+
+            <label for="category">Category</label>
+            <select id="category" name="category">
+                <!-- Options will be dynamically updated using JavaScript -->
+            </select>
+
+            <button type="submit">Register Book</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function updateCategoryDropdown() {
+            // Options for the Category dropdown
+            var categories = ["Fiction", "Non-Fiction", "Mystery"];
+
+            // Clear existing options
+            $("#category").empty();
+
+            // Add new options
+            for (var i = 0; i < categories.length; i++) {
+                $("#category").append('<option value="' + categories[i] + '">' + categories[i] + '</option>');
+            }
+        }
+
+        $(document).ready(function () {
+            updateCategoryDropdown();
+        });
+    </script>
+</body>
+
+</html>
