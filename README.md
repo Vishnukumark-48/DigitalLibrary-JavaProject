@@ -1,4 +1,6 @@
-![Screenshot (96)](https://github.com/Vishnukumark-48/DigitalLibrary/assets/114276513/ea855746-adca-4609-a65b-d7ce2a7c8bd0)
+![Screenshot (97)](https://github.com/Vishnukumark-48/DigitalLibrary/assets/114276513/5d233f9f-1021-4c2e-be75-1aee055b87fe)
+
+
 **ABSTRACT**
 
 The Enhanced Digital Library redefines the traditional library experience 
@@ -153,6 +155,7 @@ interactions
 ![Screenshot (107)](https://github.com/Vishnukumark-48/DigitalLibrary/assets/114276513/a9caaa1f-ab61-4857-bb67-5189544e0c06)
 ![Screenshot (108)](https://github.com/Vishnukumark-48/DigitalLibrary/assets/114276513/2d441cc1-f5bb-438f-a3e7-ab48adec8a39)
 ![Screenshot (109)](https://github.com/Vishnukumark-48/DigitalLibrary/assets/114276513/0cfc54fc-22c9-4386-9527-75fb41846109)
+![Screenshot (110)](https://github.com/Vishnukumark-48/DigitalLibrary/assets/114276513/3798d338-8622-4e64-921a-d8f872adcfd3)
 
 
 **CONCLUSION**
